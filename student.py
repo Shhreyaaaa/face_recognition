@@ -325,7 +325,7 @@ class Student:
             messagebox.showerror("Error","All Fiels are required",parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+                conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
                 my_cursor=conn.cursor()
                 my_cursor.execute("insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                                                                                                                 self.var_dep.get(),
@@ -355,7 +355,7 @@ class Student:
     #===================fetch data==========================
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+        conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from student")
         data=my_cursor.fetchall()
@@ -399,7 +399,7 @@ class Student:
             try:
                 Update=messagebox.askyesno("Update","Do you want to update these student details?",parent=self.root)
                 if Update>0:
-                    conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+                    conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
                     my_cursor=conn.cursor()
                     my_cursor.execute("Update student set Dep=%s,Course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,RollNo=%s,Gender=%s,DOB=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
                                                                                                                                                                                                                             self.var_dep.get(),
@@ -437,7 +437,7 @@ class Student:
             try:
                 delete=messagebox.askyesno("Student Delete Page","Do you want to delete this student?",parent=self.root)
                 if delete>0:
-                    conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+                    conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
                     my_cursor=conn.cursor()
                     sql="delete from student where Student_id=%s"
                     val=(self.var_id.get(),)
@@ -478,7 +478,7 @@ class Student:
             messagebox.showerror("Error","All Fiels are required",parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+                conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
                 my_cursor=conn.cursor()
                 my_cursor.execute("Select * from student")
                 myresult=my_cursor.fetchall()
@@ -555,7 +555,7 @@ class Student:
             student_id = self.var_id.get()
 
             # Connect to MySQL
-            conn = mysql.connector.connect(host="localhost", username="root", password="Shreya@2110", database="face_recognizer")
+            conn=mysql.connector.connect(host="HOSTNAME",user="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
             my_cursor = conn.cursor()
 
             # Check if student exists

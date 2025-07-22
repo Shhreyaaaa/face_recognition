@@ -71,7 +71,7 @@ class Face_Recognition:
                 id,predict=clf.predict(gray_image[y:y+h,x:x+w])
                 confidence=int(100*(1-(predict/300)))
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="Shreya@2110",database="face_recognizer")
+                conn=mysql.connector.connect(host="YOUR_HOSTNAME",username="YOUR_USERNAME",password="YOUR_DATABASE_PASSWORD",database="YOUR_DATABASE_NAME")
                 my_cursor=conn.cursor()
 
                 my_cursor.execute("select Name from student where Student_id="+str(id))
